@@ -1,2 +1,20 @@
-go_version: "1.12.3"
-go_checksum: "efce59fac5ebc7302263ca1093fe2c3252c1b936f5b1ae08afc328eea0403c79"
+---
+
+lnd_user: "lnd"
+lnd_data_dir: "/var/lib/lnd"
+lnd_log_dir: "/var/log/lnd"
+lnd_alias: "test"
+lnd_bitcoin_node: "127.0.0.1"
+node_external_ip: "1.1.1.1"
+lnd_version: "v0.13.1-beta" 
+lnd_arch: "arm64"
+lnd_tar_name: "lnd-linux-{{lnd_arch}}-{{lnd_version}}"
+lnd_tar: "{{lnd_tar_name}}.tar.gz"
+lnd_url: "https://github.com/lightningnetwork/lnd/releases/download/{{lnd_version}}/{{lnd_tar}}"
+lnd_conf_dir: "/home/{{lnd_user}}/.lnd"
+
+lndconnect_user: "lnd"
+lndconnect_version: "v0.2.0"
+lndconnect_tar_name: "lndconnect-linux-{{lnd_arch}}-{{lndconnect_version}}"
+lndconnect_tar: "{{lndconnect_tar_name}}.tar.gz"
+lndconnect_url: "https://github.com/LN-Zap/lndconnect/releases/download/{{lndconnect_version}}/{{lndconnect_tar}}"

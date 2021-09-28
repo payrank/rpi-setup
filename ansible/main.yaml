@@ -5,5 +5,5 @@
     - raspbian/base
     - raspbian/external-drive
     - raspbian/bitcoin
-    - raspbian/c-lightning
+    - raspbian/lnd
     - raspbian/harden-ssh

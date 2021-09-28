@@ -1,18 +1,17 @@
 [Unit]
 Description=lnd
-Requires=bitcoind.service
-After=bitcoind.service
+Wants={{lnd_bitcoin_node}}.service
+After={{lnd_bitcoin_node}}.service
 
 [Service]
-ExecStart=/usr/local/go/bin/lnd --bitcoin.active --bitcoin.{{bitcoind_network}} --bitcoin.node=bitcoind  --lnddir={{lnd_dir}}
+ExecStart=/usr/local/bin/lnd
+User={{lnd_user}}
 
-# Creates /run/lnd owned by bitcoin
-RuntimeDirectory=lnd
-User=bitcoin
-Group=bitcoin
-Type=forking
-PIDFile=/run/lnd/lnd.pid
-Restart=on-failure
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
+PrivateDevices=true
+MemoryDenyWriteExecute=true
 
 [Install]
 WantedBy=multi-user.target
