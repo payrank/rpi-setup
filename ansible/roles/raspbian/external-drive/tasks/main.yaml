@@ -28,7 +28,8 @@
   mount:
     path: "{{bitcoind_mount}}"
     src: "{{mount_src}}"
-    fstype: "ext4"
+    fstype: "btrfs"
+    opts: "subvol=@bitcoind"
     state: "mounted"
 
 - name: chmod all directories on external drive

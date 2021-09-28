@@ -1,0 +1,5 @@
+all:
+  hosts:
+    payrank-test-node:
+      ansible_host: ln.imagilan
+      ansible_user: simon

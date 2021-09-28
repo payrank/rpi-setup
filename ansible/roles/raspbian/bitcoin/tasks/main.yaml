@@ -23,6 +23,7 @@
   get_url:
     url: "{{bitcoind_url}}"
     dest: "/tmp"
+    checksum: "sha256:{{bitcoind_sha256}}"
   when: "bitcoind_stat.stat.exists == false"
   notify: restart bitcoind
 

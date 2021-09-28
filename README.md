@@ -4,7 +4,7 @@
 
 This playbook assumes the following configurations:
 
-1) The rpis has been initialized with raspbian stretch lite.
+1) The rpis has been initialized with ubuntu.
 2) An external hdd is being used to store blockchain data. It will require some extra
 bit of configuration to change this setup. All bitcoind/lightningd data is stored on the
 external hdd and not the SD card. This is very, very intentional.
@@ -42,13 +42,13 @@ rpi-lightning-node-ansible/ansible/inventory/host_vars/example-lightning-node:
 ```
 # Need to be configured:
 
-mount_src: "/dev/sda1" # Where the external drive is mounted
+mount_src: "/dev/nvme-whatever" # Where the external drive is mounted
 
 ## bitcoind
 bitcoind_rpc_user:     "testuser"
 bitcoind_rpc_password: "donotusethispassword"
-bitcoind_version:      "0.18.0"
-bitcoind_network:      "testnet"
+bitcoind_version:      "22.0"
+bitcoind_network:      "mainnet"
 bitcoind_mount:        "/var/lib/bitcoin" # Directory in which the external hdd is mounted
 bitcoind_dir:          "{{bitcoind_mount}}" # Location of the bitcoin data dir, should be the same as the bitcoind_mount
 
