@@ -14,3 +14,9 @@ rpclisten=0.0.0.0:10009
 bitcoin.mainnet=true
 bitcoin.active=true
 bitcoin.node={{lnd_bitcoin_node}}
+
+[Bitcoind]
+bitcoind.rpcuser={{bitcoind_rpc_user}}
+bitcoind.rpcpass={{bitcoind_rpc_password}}
+bitcoind.zmqpubrawblock=tcp://127.0.0.1:29000
+bitcoind.zmqpubrawtx=tcp://127.0.0.1:29001

@@ -59,7 +59,7 @@
   become: yes
   template:
     src: "lnd.service.j2"
-    dest: "/lib/systemd/system/lnd.service"
+    dest: "/etc/systemd/system/lnd.service"
     mode: "0644"
   notify: restart lnd
 

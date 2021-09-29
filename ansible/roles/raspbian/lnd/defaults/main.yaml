@@ -1,10 +1,8 @@
----
-
-lnd_user: "lnd"
+lnd_user: "bitcoin"
 lnd_data_dir: "/var/lib/lnd"
 lnd_log_dir: "/var/log/lnd"
 lnd_alias: "test"
-lnd_bitcoin_node: "127.0.0.1"
+lnd_bitcoin_node: "bitcoind"
 node_external_ip: "1.1.1.1"
 lnd_version: "v0.13.1-beta" 
 lnd_arch: "arm64"
