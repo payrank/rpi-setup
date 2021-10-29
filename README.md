@@ -16,17 +16,13 @@ external hdd and not the SD card. This is very, very intentional.
 
 ```
 /srv/payrank/
-├── bitcoind
-│   └── blocks
-└── lnd
-    ├── data
-    │   ├── graph
-    │   │   └── mainnet
-    │   └── watchtower
-    ├── etc
-    └── logs
-        └── bitcoin
-            └── mainnet
+  ├── bitcoind
+  │   ├── blocks
+  │   └── bitcoin.conf
+  └── lnd
+      ├── data
+      ├── etc/lnd.conf
+      └── logs
 ```
 
 
