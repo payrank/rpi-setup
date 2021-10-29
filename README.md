@@ -17,7 +17,7 @@ external hdd and not the SD card. This is very, very intentional.
 ```
 /srv/payrank/
 ├── bitcoind
-│   ├── blocks
+│   └── blocks
 └── lnd
     ├── data
     │   ├── graph
