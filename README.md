@@ -12,6 +12,24 @@ external hdd and not the SD card. This is very, very intentional.
 4) systemd is used to manage bitcoind/lightningd processes
 5) ssh keys are used instead of password authentication.
 
+### Default layout 
+
+```
+/srv/payrank/
+├── bitcoind
+│   ├── blocks
+└── lnd
+    ├── data
+    │   ├── graph
+    │   │   └── mainnet
+    │   └── watchtower
+    ├── etc
+    └── logs
+        └── bitcoin
+            └── mainnet
+```
+
+
 ## Running
 
 ```
