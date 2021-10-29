@@ -1,8 +1,21 @@
 ---
 
+- name: add lnd group
+  become: yes
+  group:
+    name: "{{lnd_user}}"
+    state: "present"
+
 - name: add lnd user
   become: yes
-  user: name="{{lnd_user}}"
+  user: 
+    name: "{{lnd_user}}" 
+    shell: "/bin/false"
+    comment: "bitcoind user"
+    home: "{{lnd_dir}}"
+    group: "{{lnd_user}}"
+    groups: "{{lnd_user}}"
+    append: yes
 
 - name: download lnd
   become: yes
@@ -42,8 +55,8 @@
     mode: "{{item.mode}}"
   loop:
     - { path: "{{lnd_data_dir}}", mode: "0750" }
-    - { path: "{{lnd_log_dir}}", mode: "0750" }
-    - { path: "{{lnd_conf_dir}}", mode: "0755" }
+    - { path: "{{lnd_log_dir}}",  mode: "0750" }
+    - { path: "{{lnd_conf_dir}}", mode: "0750" }
 
 - name: configure lnd
   become: yes

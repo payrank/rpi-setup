@@ -1,8 +1,30 @@
 ---
 
-- name: add bitcoind user
+- name: add bitcoin group
   become: yes
-  user: name="{{bitcoind_user}}" shell="/bin/false"
+  group:
+    name: "{{bitcoind_user}}"
+    state: "present"
+
+- name: add bitcoin user
+  become: yes
+  user: 
+    name: "{{bitcoind_user}}" 
+    shell: "/bin/false"
+    comment: "bitcoind user"
+    home: "{{bitcoind_data_dir}}"
+    group: "{{bitcoind_user}}"
+    groups: "{{bitcoind_user}}"
+    append: yes
+
+- name: create bitcoind dir
+  become: yes
+  file:
+    path: "{{bitcoind_dir}}"
+    state: "directory"
+    owner: "{{bitcoind_user}}"
+    group: "{{bitcoind_user}}"
+    mode: 0770
 
 - name: create bitcoind data dir
   become: yes
@@ -12,6 +34,15 @@
     owner: "{{bitcoind_user}}"
     group: "{{bitcoind_user}}"
     mode: "0770"
+
+- name: chown files in {{bitcoind_data_dir}}
+  become: yes
+  file:
+    path: "{{bitcoind_data_dir}}"
+    state: "directory"
+    recurse: "yes"
+    owner: "{{bitcoind_user}}"
+    group: "{{bitcoind_user}}"
 
 - name: check to see if bitcoind is already downloaded
   stat:

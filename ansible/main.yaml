@@ -2,8 +2,9 @@
 
 - hosts: all
   roles:
-    - raspbian/base
-    - raspbian/external-drive
-    - raspbian/bitcoin
-    - raspbian/lnd
-    - raspbian/harden-ssh
+   # - payrank/base
+   # - payrank/external-drive
+   # - payrank/bitcoin
+    - payrank/lnd
+   # - payrank/harden-ssh
+

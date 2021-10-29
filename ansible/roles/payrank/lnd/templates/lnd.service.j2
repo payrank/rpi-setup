@@ -4,7 +4,7 @@ Wants={{lnd_bitcoin_node}}.service
 After={{lnd_bitcoin_node}}.service
 
 [Service]
-ExecStart=/usr/local/bin/lnd
+ExecStart=/usr/local/bin/lnd --lnddir={{lnd_dir}} --configfile={{lnd_conf_dir}}/lnd.conf
 User={{lnd_user}}
 
 PrivateTmp=true

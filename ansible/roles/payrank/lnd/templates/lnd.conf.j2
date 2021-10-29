@@ -1,7 +1,7 @@
 [Application Options]
 externalip={{node_external_ip}}
 
-datadir={{lnd_data_dir}}
+datadir={{lnd_dir}}
 logdir={{lnd_log_dir}}
 
 alias={{lnd_alias}}
@@ -12,7 +12,7 @@ rpclisten=0.0.0.0:10009
 
 [Bitcoin]
 bitcoin.mainnet=true
-bitcoin.active=true
+bitcoin.active=1
 bitcoin.node={{lnd_bitcoin_node}}
 
 [Bitcoind]

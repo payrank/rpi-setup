@@ -1,19 +1,15 @@
-mount_src: "/dev/nvme0n1p1" # External Drive name
+
+## options for mounting the external disk
+external_disk_device: "UUID=e719c71d-a755-4a42-9c48-787517a26a81"
+external_disk_mountpoint: "/srv/payrank"
+external_disk_fstype: "btrfs"
+external_disk_mountopts: "noatime,commit=300,subvol=@payrank,autodefrag,ssd,space_cache"
 
 ## bitcoind
 bitcoind_rpc_user:     "testuser"
 bitcoind_rpc_password: "donotusethispassword"
 bitcoind_version:      "22.0"
 bitcoind_network:      "mainnet"
-bitcoind_mount:        "/var/lib/bitcoind" # Directory in which the external hdd is mounted
-bitcoind_dir:          "{{bitcoind_mount}}" # Location of the bitcoin data dir, should be the same as the bitcoind_mount
-
-## lightningd
-lightningd_version:    "v0.7.2.1"
-lightningd_network:    "mainnet"
-lightningd_node_alias: "Test Lightning Node"
-lightningd_build_dir:  "/home/pi/lightning" # The location to build the c-lightning binaries
-lightningd_dir:        "/var/lib/bitcoin/lightning"
 
 # Not needed for configuration, used for DRY and convenience:
 
@@ -26,3 +22,11 @@ bitcoind_sha256:  "ac718fed08570a81b3587587872ad85a25173afa5f9fbbd0c03ba4d1714cf
 ## c-lightning/lightningd
 lightningd_git_repo: "https://github.com/ElementsProject/lightning.git"
 lightningd_conf:     "{{lightningd_dir}}/lightningd.conf"
+
+
+## lightningd
+lightningd_version:    "v0.7.2.1"
+lightningd_network:    "mainnet"
+lightningd_node_alias: "Test Lightning Node"
+lightningd_build_dir:  "/home/pi/lightning" # The location to build the c-lightning binaries
+lightningd_dir:        "/var/lib/bitcoin/lightning"
