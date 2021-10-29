@@ -14,8 +14,10 @@ external hdd and not the SD card. This is very, very intentional.
 
 ## Running
 
-`cd ansible`
-`ansible-playbook main.yaml -i inventory/`
+```
+cd ansible
+ansible-playbook main.yaml -i inventory/
+```
 
 ## Required Configurations
 
