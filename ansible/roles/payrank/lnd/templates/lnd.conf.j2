@@ -18,5 +18,10 @@ bitcoin.node={{lnd_bitcoin_node}}
 [Bitcoind]
 bitcoind.rpcuser={{bitcoind_rpc_user}}
 bitcoind.rpcpass={{bitcoind_rpc_password}}
-bitcoind.zmqpubrawblock=tcp://127.0.0.1:29000
-bitcoind.zmqpubrawtx=tcp://127.0.0.1:29001
+bitcoind.zmqpubrawblock=tcp://127.0.0.1:28332
+bitcoind.zmqpubrawtx=tcp://127.0.0.1:28333
+
+[Tor]
+tor.active=true
+tor.v3=true
+tor.streamisolation=true

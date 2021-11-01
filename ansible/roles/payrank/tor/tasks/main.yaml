@@ -1,0 +1,20 @@
+- name: install tor packages
+  become: yes
+  apt: name="{{packages}}"
+  vars:
+    packages:
+      - "tor"
+
+- name: configure tor
+  become: yes
+  template:
+    src: "torrc.j2"
+    dest: "/etc/tor/torrc"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  notify: restart tor
+
+- name: ensure tor is started
+  become: yes
+  systemd: service="tor.service" enabled="yes" state="started" daemon_reload="yes"

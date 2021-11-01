@@ -1,0 +1,16 @@
+SocksPort 9050
+ControlPort 9051
+
+CookieAuthentication 1
+Log info stdout
+SocksPolicy accept 192.168.0.0/16
+
+
+
+SocksPolicy accept 127.0.0.1/8
+SocksPolicy reject *
+
+
+# no exits allowed
+ExitPolicy reject *:*  
+PublishServerDescriptor 0

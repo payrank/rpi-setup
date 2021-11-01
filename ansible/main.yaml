@@ -2,9 +2,9 @@
 
 - hosts: all
   roles:
-   # - payrank/base
-   # - payrank/external-drive
-   # - payrank/bitcoin
+    - payrank/base
+    - payrank/external-drive
+    - payrank/tor
+    - payrank/bitcoin
     - payrank/lnd
-   # - payrank/harden-ssh
-
+    - payrank/harden-ssh

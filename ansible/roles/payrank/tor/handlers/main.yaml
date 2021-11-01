@@ -1,0 +1,5 @@
+---
+
+- name: restart tor
+  become: yes
+  systemd: service="tor.service" state="restarted" daemon_reload="yes"
